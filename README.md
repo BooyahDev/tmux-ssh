@@ -1,8 +1,18 @@
-# tmux-screenctl
+# tmux-ssh
 
-tmux-screenctl は、tmux と SSH を使用して複数のサーバーに同時に接続し、操作を同期させるためのシェルスクリプトです。サーバーリストファイルからサーバー情報を読み込み、各サーバーに SSH 接続した tmux ペインを作成します。
+tmux-ssh は、tmux と SSH を使用して複数のサーバーに同時に接続し、操作を同期させるためのシェルスクリプトです。サーバーリストファイルからサーバー情報を読み込み、各サーバーに SSH 接続した tmux ペインを作成します。
 
 ## 機能
+
+サーバリストを用意しコマンド実行  
+<img width="263" height="171" alt="スクリーンショット 2025-11-20 23 51 59" src="https://github.com/user-attachments/assets/ab821f88-d8c1-410f-ae1a-fa459c27dbcf" />  
+
+自動でtmuxセッションが起動し、画面分割されsshログインを実施。  
+また同時にキー入力を全てのペインで同期します。  
+<img width="266" height="517" alt="スクリーンショット 2025-11-20 23 52 12" src="https://github.com/user-attachments/assets/557b9da9-89b1-432d-bdb1-ca8a863e1821" />
+
+
+
 
 - サーバーリストファイルから複数のサーバーを読み込み
 - tmux のペインを使用して各サーバーに SSH 接続
@@ -20,8 +30,8 @@ tmux-screenctl は、tmux と SSH を使用して複数のサーバーに同時�
 このリポジトリをクローンまたはダウンロードしてください。
 
 ```bash
-git clone https://github.com/yourusername/tmux-screenctl.git
-cd tmux-screenctl
+git clone https://github.com/BooyahDev/tmux-ssh.git
+cd tmux-ssh
 ```
 
 ### 手動インストール
