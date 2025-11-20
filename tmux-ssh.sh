@@ -46,7 +46,7 @@ if [ -z "$TMUX" ]; then
     tmux new-session -d -s "$SESSION_NAME" -n "$WINDOW_NAME" "ssh $SSH_USER@${SERVERS[0]}"
     # 残りのサーバーごとにペインを分割
     for ((i=1; i<${#SERVERS[@]}; i++)); do
-        tmux split-window -t "$SESSION_NAME" -v "ssh $SSH_USER@${SERVERS[$i]}"
+        tmux split-window -t "$SESSION_NAME" -v -f "ssh $SSH_USER@${SERVERS[$i]}"
     done
     # レイアウトを横に均等配置
     tmux select-layout -t "$SESSION_NAME" even-vertical
@@ -66,7 +66,7 @@ tmux rename-window "$WINDOW_NAME"
 tmux send-keys " ssh $SSH_USER@${SERVERS[0]}" C-m
 # 残りのサーバーごとにペインを分割してSSHログイン
 for ((i=1; i<${#SERVERS[@]}; i++)); do
-    tmux split-window -v "ssh $SSH_USER@${SERVERS[$i]}"  # -v で垂直分割（横に分割）
+    tmux split-window -v -f "ssh $SSH_USER@${SERVERS[$i]}"  # -v で垂直分割（横に分割）
 done
 # レイアウトを横に均等配置（ペインを均等に配置）
 tmux select-layout even-vertical
